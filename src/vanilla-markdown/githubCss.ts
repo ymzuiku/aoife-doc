@@ -1,5 +1,6 @@
 const css = `
 :root {
+  --vmdb-header: 50px;
   --vmdb-radius: 6px;
   --vmdb-line: #ddeeee;
   --vmdb-fm: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
@@ -104,7 +105,6 @@ const css = `
 }
 
 .vmdb h1 {
-  font-size: 2em;
   margin: .67em 0;
 }
 
@@ -219,35 +219,6 @@ const css = `
   margin-bottom: 0;
 }
 
-.vmdb h1 {
-  font-size: 32px;
-}
-
-.vmdb h1,
-.vmdb h2 {
-  font-weight: 600;
-}
-
-.vmdb h2 {
-  font-size: 24px;
-}
-
-.vmdb h3 {
-  font-size: 20px;
-}
-
-.vmdb h3,
-.vmdb h4 {
-  font-weight: 600;
-}
-
-.vmdb h4 {
-  font-size: 16px;
-}
-
-.vmdb h5 {
-  font-size: 14px;
-}
 
 .vmdb h5,
 .vmdb h6 {
@@ -692,34 +663,44 @@ const css = `
   line-height: 1.25;
 }
 
-.vmdb h1 {
-  margin-top: 1.5em;
-  padding-top: 1.5em;
-  border-top: 1px solid var(--vmdb-line);
+.vmdb pre {
+  margin: 1.8em 0px !important;
 }
 
 .vmdb h1 {
+  margin-top: 2.5em;
+  padding-top: 2em;
+  border-top: 1px solid var(--vmdb-line);
   font-size: 2.7em;
 }
 
-
 .vmdb h2 {
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
   font-size: 2em;
 }
 
 .vmdb h3 {
+  margin-top: 1em;
+  margin-bottom: 1em;
   font-size: 1.6em;
 }
 
 .vmdb h4 {
+  margin-top: 1em;
+  margin-bottom: 1em;
   font-size: 1.25em;
 }
 
 .vmdb h5 {
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
   font-size: .875em;
 }
 
 .vmdb h6 {
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
   font-size: .85em;
   color: #6a737d;
 }

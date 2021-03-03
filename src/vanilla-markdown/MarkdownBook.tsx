@@ -1,4 +1,4 @@
-import { MarkdownList, MarkdownTextList } from "./MarkdownList";
+import { MarkdownPage, MarkdownData } from "./MarkdownPage";
 
 export const MarkdownBook = ({ url }: { url: string }) => {
   fetch(url + "?t=" + Date.now())
@@ -14,12 +14,13 @@ export const MarkdownBook = ({ url }: { url: string }) => {
       });
 
       Promise.all(promiseList).then((texts) => {
-        const list = [] as MarkdownTextList[];
+        const list = [] as any;
         texts.forEach((text, i) => {
           list.push({ name: data.files[i], text: text as string });
         });
         out.innerHTML = "";
-        out.append(<MarkdownList textList={list} />);
+        data.list = list;
+        out.append(<MarkdownPage data={list} {...data} />);
       });
     });
 
