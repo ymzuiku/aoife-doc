@@ -1,6 +1,6 @@
 {
   "name": "aoife-doc",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "es/lib/index.js",
   "types": "lib/index.ts",
   "scripts": {
@@ -18,5 +18,14 @@
     "@types/marked": "^1.2.2",
     "@types/mermaid": "^8.2.2",
     "vite": "^2.0.0-beta.12"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ymzuiku/aoife-doc.git"
+  },
+  "bugs": {
+    "url": "git+https://github.com/ymzuiku/aoife-doc.git"
+  },
+  "homepage": "git+https://github.com/ymzuiku/aoife-doc.git",
+  "license": "MIT"
 }
