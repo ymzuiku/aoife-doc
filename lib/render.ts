@@ -1,7 +1,6 @@
 import marked from "marked";
-import mermaid from "mermaid";
 import "./githubCss";
-import { Prism } from "vanilla-prism";
+import { Prism } from "./prism";
 
 const renderer = new marked.Renderer();
 const mermaidCache = {} as any;
@@ -100,18 +99,22 @@ function VanillaMarkdown(md: string, isGetMoc?: boolean) {
   setTimeout(() => {
     try {
       const nodeList = view.querySelectorAll(".mermaid");
-      mermaid.init(nodeList);
-      nodeList.forEach((v) => {
-        const code = v.getAttribute("data-code");
-        const html = v.innerHTML.trim();
-        if (code) {
-          mermaidCache[code] = html;
-        }
-      });
-      nodeList.forEach((ele: any) => {
-        ele.style.opacity = 1;
-        ele.style.minHeight = "auto";
-      });
+      if (nodeList && nodeList.length) {
+        import("mermaid").then((e) => {
+          e.default.init(nodeList);
+          nodeList.forEach((v) => {
+            const code = v.getAttribute("data-code");
+            const html = v.innerHTML.trim();
+            if (code) {
+              mermaidCache[code] = html;
+            }
+          });
+          nodeList.forEach((ele: any) => {
+            ele.style.opacity = 1;
+            ele.style.minHeight = "auto";
+          });
+        });
+      }
     } catch (err) {
       console.warn("[mermaid]: ", err);
     }

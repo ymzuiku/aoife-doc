@@ -24,6 +24,7 @@ export const MarkdownMenu = ({
               ]}
               onclick={() => {
                 actions.changeMobileMenuShow(state, false);
+                window.location.href = "/#/" + i;
                 setTimeout(() => {
                   document.documentElement.scrollTo({ top: 0 });
                   state.num = i;

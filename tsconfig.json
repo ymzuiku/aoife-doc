@@ -19,5 +19,5 @@
     "jsxFactory": "aoife",
     "jsxFragmentFactory": "aoife.Frag"
   },
-  "include": ["src"]
+  "include": ["src", "lib"]
 }

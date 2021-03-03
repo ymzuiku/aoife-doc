@@ -1,9 +1,16 @@
 import { Markdown, markdownState } from "./Markdown";
 import css from "template-css";
-import { menu } from "./svgs";
-import { MarkdownData } from "./types";
+import { MarkdownList } from "./types";
 import { MarkdownMenu } from "./MarkdownMenu";
 import { MarkdownHeader } from "./MarkdownHeader";
+
+export interface MarkdownData {
+  title: string;
+  path: string;
+  verson: string;
+  files: string[];
+  data: MarkdownList[];
+}
 
 export const MarkdownPage = ({ title, data }: MarkdownData) => {
   console.log(window.location.hash);
