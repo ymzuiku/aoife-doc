@@ -3,10 +3,15 @@ const css = `
   --vmdb-header: 50px;
   --vmdb-radius: 6px;
   --vmdb-line: #ddeeee;
+  --vmdb-menu-width: 240px;
   --vmdb-fm: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
 }
 .vmdb pre {
   border-radius: var(--vmdb-radius) !important;
+}
+.vmdb pre > code {
+  white-space: break-spaces !important;
+  word-break: break-all !important;
 }
 .vmdb {
   -moz-user-select:auto !important; 

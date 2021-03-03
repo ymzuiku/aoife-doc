@@ -1,7 +1,5 @@
-import markdown, { usePrismTheme } from ".";
+import markdown from "./render";
 import css from "template-css";
-
-usePrismTheme((window as any).aoifeMarkdownTheme || "gitbook");
 
 export const markdownState = {
   viewIndex: 0,
@@ -117,7 +115,7 @@ css`
   @media (min-width: 640px) {
     .aoife-markdown {
       display: grid;
-      grid-template-columns: 1fr 210px;
+      grid-template-columns: 1fr var(--vmdb-menu-width);
       /* grid-auto-flow: column; */
     }
     .aoife-markdown > .moc {
@@ -131,6 +129,8 @@ css`
     position: sticky;
     top: 20px;
     left: 0px;
+    height: calc(100vh - 40px);
+    overflow-y: auto;
     padding-right: 20px;
     font-size: 12px;
     line-height: 1.5;
@@ -144,38 +144,30 @@ css`
   .aoife-markdown .moc-real .moc-level-none {
     display: none;
   }
+  .aoife-markdown .moc-real .moc-level-item {
+    cursor: pointer;
+    margin-top: 10px;
+  }
   .aoife-markdown .moc-real .moc-level-1 {
     padding-left: 16px;
-    cursor: pointer;
-    margin-top: 6px;
   }
   .aoife-markdown .moc-real .moc-level-2 {
     padding-left: 24px;
-    cursor: pointer;
-    margin-top: 6px;
   }
   .aoife-markdown .moc-real .moc-level-3 {
     padding-left: 36px;
-    cursor: pointer;
-    margin-top: 6px;
     font-size: 10px;
   }
   .aoife-markdown .moc-real .moc-level-4 {
     padding-left: 42px;
-    cursor: pointer;
-    margin-top: 6px;
     font-size: 10px;
   }
   .aoife-markdown .moc-real .moc-level-5 {
     padding-left: 52px;
-    cursor: pointer;
-    margin-top: 6px;
     font-size: 10px;
   }
   .aoife-markdown .moc-real .moc-level-6 {
     padding-left: 62px;
-    cursor: pointer;
-    margin-top: 6px;
     font-size: 10px;
   }
   .aoife-markdown .moc-real .moc-level-item:hover {
@@ -197,6 +189,7 @@ css`
     border-left: 4px solid hsl(220, 60%, 60%, 0);
   }
   .moc-title-in-page {
+    color: hsl(220, 50%, 50%);
     border-left: 4px solid var(--vmdb-line) !important;
     /* background: hsl(220, 50%, 95%); */
   }
