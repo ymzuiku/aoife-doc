@@ -14,7 +14,7 @@ export interface MarkdownData {
   data: MarkdownList[];
 }
 
-export const MarkdownPage = ({ data }: MarkdownData) => {
+export const MarkdownPage = ({ title, data }: MarkdownData) => {
   const state = {
     num: 0,
     showMobileMenu: false,
@@ -33,7 +33,7 @@ export const MarkdownPage = ({ data }: MarkdownData) => {
       <div class="content">
         <div class="menu">
           <div class="menu-real">
-            <div>button</div>
+            <div class="menu-title">{title || "Aofie Document"}</div>
             {data.map((item, i) => {
               return (
                 <div
@@ -63,6 +63,7 @@ export const MarkdownPage = ({ data }: MarkdownData) => {
 
 css`
   .aoife-markdown-page {
+    font-family: var(--vmdb-fm);
     display: grid;
     grid-template-rows: var(--vmdb-header) 1fr;
   }
@@ -96,10 +97,15 @@ css`
   }
   .aoife-markdown-page .menu-real {
     box-sizing: border-box;
-    padding: 60px 0px 60px 60px;
+    padding: 20px 0px 60px 60px;
+  }
+  .aoife-markdown-page .menu-title {
+    font-size: 20px;
+    font-weight: 500;
+    padding: 20px;
+    padding-left: 12px;
   }
   .aoife-markdown-page .menu-item {
-    font-family: var(--vmdb-fm);
     margin: 1px;
     margin-right: 0px;
     padding: 12px;
