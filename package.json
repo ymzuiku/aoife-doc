@@ -2,6 +2,7 @@
   "name": "client-wf",
   "version": "0.0.0",
   "scripts": {
+    "es": "esbuild --define:process.env.NODE_ENV=\\\"production\\\" src/vanilla-markdown/index.ts --outdir=es --target=es6 --bundle --format=esm --jsx-factory=aoife --jsx-fragment=aoife.Frag --minify --splitting",
     "dev": "vite",
     "build": "tsc && vite build"
   },
