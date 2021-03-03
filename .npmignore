@@ -1,7 +1,7 @@
 nodue_modules
 public
-example.html
 yarn-error.log
 yarn.lock
 index.html
 vite.config.ts
+example
