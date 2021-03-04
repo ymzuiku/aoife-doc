@@ -101,9 +101,13 @@ css`
     display: grid;
     position: relative;
     grid-auto-flow: row;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
   }
   .aoife-markdown-content {
     display: grid;
+    padding-bottom: 60px;
   }
   .aoife-markdown > .moc {
     position: relative;
@@ -128,11 +132,13 @@ css`
   .aoife-markdown > .moc > .moc-real {
     position: sticky;
     top: 20px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
     left: 0px;
-    height: calc(100vh - 40px);
+    height: auto;
+    max-height: calc(100% - 40px);
     overflow-y: auto;
     padding-right: 20px;
-    font-size: 12px;
     line-height: 1.5;
     font-weight: 500;
     color: rgb(116, 129, 141);

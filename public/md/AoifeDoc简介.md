@@ -4,8 +4,6 @@
 
 不需要配置编译的工程，只需编写 html 和 JSON 配置，引入 JS，即可完成 markdown 文档配置。
 
-[查看 Demo](https://aoife-doc.writeflowy.com)
-
 # 使用
 
 我们使用命令行创建一个工程
@@ -42,7 +40,7 @@ $ npx aoife-doc my-document
 - title 指文档的标题
 - version 指文档的版本，在后续读取 .md 文件时，会根据版本进行缓存
 - path 指需要读取的 markdown 文档的文件夹路径
-- files 指需要读取的 markdown 文档的文件路径，可以解析多个 .md 文件，根据自行的需要排序
+- files 指需要读取的 markdown 文档的文件路径，可以解析多个 .md 文件，根据自行的需要排序, 注意，文件名若有空格无法使用 markdown 链接进行跳转。
 
 ## 预览
 

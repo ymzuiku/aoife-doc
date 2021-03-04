@@ -1,3 +1,4 @@
+import css from "template-css";
 import { MarkdownPage, MarkdownData } from "./MarkdownPage";
 
 export const MarkdownBook = ({ url }: { url: string }) => {
@@ -20,10 +21,21 @@ export const MarkdownBook = ({ url }: { url: string }) => {
         });
         out.innerHTML = "";
         data.list = list;
-        out.append(<MarkdownPage data={list} {...data} />);
+        (out as HTMLElement).replaceWith(
+          <MarkdownPage data={list} {...data} />
+        );
       });
     });
 
-  const out = <div>Loading...</div>;
+  const out = <div class="aoife-markdown-loading">Loading...</div>;
   return out;
 };
+
+css`
+  .aoife-markdown-loading {
+    padding: 100px;
+    opacity: 0.4;
+    text-align: center;
+    font-family: var(--vmdb-fm);
+  }
+`;

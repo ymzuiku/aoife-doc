@@ -50,7 +50,7 @@ renderer.code = function (
   return out;
 };
 
-let last = "";
+import("mermaid");
 
 function VanillaMarkdown(md: string, isGetMoc?: boolean) {
   const moc: MocOptions[] = [];
@@ -74,6 +74,7 @@ function VanillaMarkdown(md: string, isGetMoc?: boolean) {
     let index = -1;
     renderer.heading = (text, level, raw, slugger) => {
       index += 1;
+
       moc.push({
         selector: ".moc-" + index,
         text,
@@ -82,7 +83,14 @@ function VanillaMarkdown(md: string, isGetMoc?: boolean) {
         index,
         line: lines[index],
       });
-      return `<h${level} data-moc="${index}" onclick="vmd_moc_click(${index})" class="moc-${index}">${text}</h${level}>`;
+
+      let dataMocFirst = "";
+
+      if (index === 0) {
+        dataMocFirst = `data-moc-first="1"`;
+      }
+
+      return `<h${level} ${dataMocFirst} data-moc="${index}" onclick="vmd_moc_click(${index})" class="moc-${index}">${text}</h${level}>`;
     };
   }
 

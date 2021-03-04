@@ -5,15 +5,18 @@ import { MarkdownList } from "./types";
 export const MarkdownMenu = ({
   state,
   title,
+  version,
   data,
 }: {
   state: any;
   title: string;
+  version: string;
   data: MarkdownList[];
 }) => {
   return (
     <div class="menu">
       <div class="menu-title">{title || "Aofie Document"}</div>
+      {version && <div class="menu-version">{version}</div>}
       <div class="menu-items">
         {data.map((item, i) => {
           return (
@@ -24,7 +27,7 @@ export const MarkdownMenu = ({
               ]}
               onclick={() => {
                 actions.changeMobileMenuShow(state, false);
-                window.location.href = "/#/" + i;
+                window.location.href = "/#/" + item.name;
                 setTimeout(() => {
                   document.documentElement.scrollTo({ top: 0 });
                   state.num = i;
@@ -50,8 +53,9 @@ export const MarkdownMenu = ({
 css`
   .aoife-markdown-page .menu {
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto auto 1fr auto;
     box-sizing: border-box;
+    height: 100%;
     padding: 20px 0px 20px 60px;
   }
   .aoife-markdown-page .menu-items {
@@ -62,6 +66,14 @@ css`
     font-weight: 500;
     padding: 20px;
     padding-left: 12px;
+  }
+  .aoife-markdown-page .menu-version {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    opacity: 0.4;
   }
   .aoife-markdown-page .menu-item {
     margin: 1px;

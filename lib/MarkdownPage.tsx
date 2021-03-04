@@ -7,22 +7,44 @@ import { MarkdownHeader } from "./MarkdownHeader";
 export interface MarkdownData {
   title: string;
   path: string;
-  verson: string;
+  version: string;
   files: string[];
   data: MarkdownList[];
 }
 
-export const MarkdownPage = ({ title, data }: MarkdownData) => {
-  console.log(window.location.hash);
-  const num = Number(window.location.hash.replace("#/", ""));
+function getName() {
+  if (window.location.hash.length > 1) {
+    const url = window.location.hash.replace("#/", "");
+    return decodeURI(url);
+  }
+  const url = window.location.pathname.replace("/", "");
+  return decodeURI(url);
+}
+
+function getNum(data: any) {
+  const name = getName();
+  if (!name) {
+    return 0;
+  }
+  let out = 0;
+  data.forEach((item: any, i: number) => {
+    if (item.name === name) {
+      out = i;
+    }
+  });
+  return out;
+}
+
+export const MarkdownPage = ({ version, title, data }: MarkdownData) => {
   const state = {
-    num: !isNaN(num) ? num : 0,
+    num: getNum(data),
     showMobileMenu: false,
     showPcMenu: true,
   };
   return (
     <div class="aoife-markdown-page">
       <MarkdownHeader
+        version={version}
         data={data}
         title={title}
         state={state}
@@ -30,7 +52,12 @@ export const MarkdownPage = ({ title, data }: MarkdownData) => {
       />
       <div class="content">
         <div class="menu-box">
-          <MarkdownMenu title={title} state={state} data={data} />
+          <MarkdownMenu
+            version={version}
+            title={title}
+            state={state}
+            data={data}
+          />
         </div>
         <div class="aoife-markdown-page-md">
           {() => <Markdown text={data[state.num] && data[state.num].text} />}
@@ -42,15 +69,16 @@ export const MarkdownPage = ({ title, data }: MarkdownData) => {
 
 css`
   .aoife-markdown-page-md {
-    padding: 20px 0px;
   }
   .aoife-markdown-page {
+    min-height: 100vh;
     font-family: var(--vmdb-fm);
     display: grid;
   }
   .aoife-markdown-page .content {
     display: block;
-    margin-top: var(--vmdb-header);
+    box-sizing: border-box;
+    padding-top: var(--vmdb-header);
   }
   .aoife-markdown-page .menu-box {
     position: relative;
@@ -69,7 +97,7 @@ css`
       display: grid;
       grid-template-rows: 1fr;
       grid-template-columns: var(--vmdb-menu-width) 1fr;
-      margin-top: 0px;
+      padding-top: 0px;
     }
   }
   @media (min-width: 900px) {

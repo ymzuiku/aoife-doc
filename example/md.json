@@ -1,6 +1,6 @@
 {
   "title": "The Aoife Example",
   "version": "1.0.0",
-  "path": "/markdown/",
+  "path": "/md/",
   "files": ["hello", "world"]
 }

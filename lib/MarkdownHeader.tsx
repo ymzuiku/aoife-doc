@@ -5,11 +5,13 @@ import { menu } from "./svgs";
 
 export const MarkdownHeader = ({
   title,
+  version,
   state,
   markdownState,
   data,
 }: {
   title: string;
+  version: string;
   state: any;
   markdownState: any;
   data: any;
@@ -31,7 +33,12 @@ export const MarkdownHeader = ({
       <label class="header-title">{title || "Aofie Document"}</label>
       <div class={() => ["mobile-menu", state.showMobileMenu && "mobile-show"]}>
         <div class="mobile-plan">
-          <MarkdownMenu title={title} data={data} state={state} />
+          <MarkdownMenu
+            version={version}
+            title={title}
+            data={data}
+            state={state}
+          />
         </div>
         <div
           class="mobile-mask"
@@ -93,7 +100,7 @@ css`
     display: grid;
     background: rgba(0, 0, 0, 0);
     transition: all 0.3s ease-out;
-    grid-template-columns: 1fr minmax(20%, 150px);
+    grid-template-columns: 1fr 100px;
   }
   .aoife-markdown-page .mobile-menu .mobile-plan {
     padding: 0px;
