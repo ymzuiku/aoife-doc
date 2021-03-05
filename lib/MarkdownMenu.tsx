@@ -42,9 +42,9 @@ export const MarkdownMenu = ({
       </div>
       <div
         class="menu-footer"
-        onclick={() => window.open("https://github.com/ymzuiku/aoife-document")}
+        onclick={() => window.open("https://github.com/ymzuiku/aoife-doc")}
       >
-        Powered by Aoife-doc
+        Powered by <span class="by-aoife-doc">Aoife-doc</span>
       </div>
     </div>
   );
@@ -112,5 +112,24 @@ css`
     opacity: 0.5;
     padding-top: 16px;
     padding-left: 16px;
+    /* display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    place-items: center; */
+  }
+  .by-aoife-doc {
+    font-size: 14px;
+    font-family: monospace;
+    background: hsl(210, 20%, 40%);
+    color: hsl(210, 0%, 100%);
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+  .aoife-github {
+    color: hsl(210, 20%, 40%);
+    display: inline-block;
+    line-height: 20px;
+    font-size: 18px;
+    transform: translate(4px, 3px);
   }
 `;
