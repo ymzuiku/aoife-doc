@@ -3,3 +3,5 @@ yarn-error.log
 yarn.lock
 index.html
 vite.config.ts
+dist
+build

@@ -682,8 +682,8 @@ css`
   }
 
   .vmdb h1 {
-    margin-top: 2.5em;
-    padding-top: 2em;
+    margin-top: 1.6em;
+    padding-top: 1.6em;
     border-top: 1px solid var(--vmdb-line);
     font-size: 2.7em;
   }

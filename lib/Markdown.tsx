@@ -42,12 +42,21 @@ window.addEventListener("scroll", (e) => {
   }
 });
 
-export const Markdown = ({ text }: { text: string }) => {
+export const Markdown = ({
+  text,
+  footer,
+}: {
+  text: string;
+  footer?: HTMLElement;
+}) => {
   const ele = markdown(text, true);
 
   const out = (
     <div class="aoife-markdown">
-      <div class="aoife-markdown-content">{ele}</div>
+      <div class="aoife-markdown-content">
+        {ele}
+        {footer && footer}
+      </div>
       <div class="moc">
         <div class="moc-real">
           <div
@@ -60,9 +69,6 @@ export const Markdown = ({ text }: { text: string }) => {
             {() => (markdownState.detail ? "Hidden detail" : "Show detail")}
           </div>
           {ele.moc.map((item) => {
-            // if (item.level > 4) {
-            //   return;
-            // }
             return (
               <div
                 class={() => [
@@ -108,6 +114,7 @@ css`
   .aoife-markdown-content {
     display: grid;
     padding-bottom: 60px;
+    grid-auto-flow: row;
   }
   .aoife-markdown > .moc {
     position: relative;
@@ -124,7 +131,6 @@ css`
     }
     .aoife-markdown > .moc {
       position: relative;
-      width: 210px;
       font-family: var(--vmdb-fm);
     }
   }
@@ -158,18 +164,18 @@ css`
     padding-left: 16px;
   }
   .aoife-markdown .moc-real .moc-level-2 {
-    padding-left: 24px;
+    padding-left: 30px;
   }
   .aoife-markdown .moc-real .moc-level-3 {
-    padding-left: 36px;
+    padding-left: 40px;
     font-size: 10px;
   }
   .aoife-markdown .moc-real .moc-level-4 {
-    padding-left: 42px;
+    padding-left: 50px;
     font-size: 10px;
   }
   .aoife-markdown .moc-real .moc-level-5 {
-    padding-left: 52px;
+    padding-left: 56px;
     font-size: 10px;
   }
   .aoife-markdown .moc-real .moc-level-6 {

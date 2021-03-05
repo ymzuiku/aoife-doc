@@ -54,8 +54,8 @@ css`
   .aoife-markdown-page .menu {
     display: grid;
     grid-template-rows: auto auto 1fr auto;
-    box-sizing: border-box;
     height: 100%;
+    box-sizing: border-box;
     padding: 20px 0px 20px 60px;
   }
   .aoife-markdown-page .menu-items {

@@ -3,6 +3,7 @@ import css from "template-css";
 import { MarkdownList } from "./types";
 import { MarkdownMenu } from "./MarkdownMenu";
 import { MarkdownHeader } from "./MarkdownHeader";
+import { MarkdownFooter } from "./MarkdownFooter";
 
 export interface MarkdownData {
   title: string;
@@ -60,7 +61,14 @@ export const MarkdownPage = ({ version, title, data }: MarkdownData) => {
           />
         </div>
         <div class="aoife-markdown-page-md">
-          {() => <Markdown text={data[state.num] && data[state.num].text} />}
+          {() => (
+            <Markdown
+              footer={
+                <MarkdownFooter state={state} num={state.num} data={data} />
+              }
+              text={data[state.num] && data[state.num].text}
+            />
+          )}
         </div>
       </div>
     </div>
