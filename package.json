@@ -1,6 +1,6 @@
 {
   "name": "aoife-doc",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "main": "es/lib/index.js",
   "types": "lib/index.ts",
   "scripts": {

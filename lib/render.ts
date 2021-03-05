@@ -40,7 +40,7 @@ renderer.code = function (
 
     code = code.trim();
 
-    return `<div data-code="${code}" style="opacity: 0; text-align:center; transition: opacity 0.1s ease-out; min-height: 10px; padding:10px 0px; overflow:auto; border:0.6px solid var(--vmdb-line); border-radius:var(--vmdb-radius); margin:10px 0px;" class="mermaid">${code}</div>`;
+    return `<div data-code="${code}" style="opacity: 0; text-align:center; transition: opacity 0.1s ease-out; min-height: 10px; padding:10px 0px; overflow:auto; margin:10px 0px;" class="mermaid">${code}</div>`;
   }
 
   let out = `<pre><code class="line-numbers highlight language-${language}">${HTMLEncode(
