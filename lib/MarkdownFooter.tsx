@@ -113,7 +113,7 @@ export const MarkdownFooter = ({
 
 css`
   .aoife-markdown-page-btn {
-    padding: 20px;
+    padding: 20px 5% 20px;
     broder: 1px solid rgba(0, 0, 0, 0.2);
   }
   .aoife-markdown-page-btn.double {
@@ -128,6 +128,9 @@ css`
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.03);
     border-radius: 4px;
     padding: 20px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 10px;
   }
   @media (min-width: 640px) {
     .aoife-markdown-page-btn > .btn:hover {
@@ -140,10 +143,6 @@ css`
     .aoife-markdown-page-btn > .btn:hover .arrow-right {
       transform: scaleX(-1) translate(-6px, 0px);
     }
-  }
-  .aoife-markdown-page-btn > .btn {
-    display: grid;
-    grid-auto-flow: column;
   }
   .aoife-markdown-page-btn > .btn.left {
     grid-template-columns: 1fr auto;

@@ -1312,7 +1312,7 @@ Please report this to https://github.com/markedjs/marked.`,s.silent)return"<p>An
   }
 `;var Ne=()=>aoife("svg",{t:"1614958133927",class:"icon",viewBox:"0 0 1024 1024",version:"1.1",xmlns:"http://www.w3.org/2000/svg","p-id":"4404",width:"1.5em",height:"1.5em"},aoife("path",{d:"M866.92864 476.29312a35.84 35.84 0 1 1 0 71.68h-696.32a35.82976 35.82976 0 0 1-35.84-35.84c0-19.80416 16.03584-35.84 35.84-35.84h696.32z",fill:"currentColor","p-id":"4405"}),aoife("path",{d:"M221.2864 512.13312l213.59616-213.59616a35.84 35.84 0 0 0-50.67776-50.688l-238.9504 238.9504a35.84 35.84 0 0 0 0 50.67776l238.9504 238.9504a35.84 35.84 0 0 0 50.67776-50.688l-213.59616-213.6064z",fill:"currentColor","p-id":"4406"})),pt=({state:n,data:i,num:u})=>{let d=b=>{document.documentElement.scrollTo({top:0}),window.location.href="#/"+i[b].name,n.num=b,aoife.next(".menu-item, .aoife-markdown-page-md")},f=()=>{!i[u-1]||d(u-1)},x=()=>{!i[u+1]||d(u+1)};return u===i.length-1?aoife("div",{class:"aoife-markdown-page-btn"},aoife("div",{class:"btn left",onclick:f},aoife("div",{class:"arrow arrow-left"},aoife(Ne,null)),aoife("div",{class:"title"},aoife("label",{class:"tip"},"Previous"),aoife("span",{class:"name"},i[u-1].name)))):u===0?aoife("div",{class:"aoife-markdown-page-btn"},aoife("div",{class:"btn right",onclick:x},aoife("div",{class:"title"},aoife("label",{class:"tip"},"Next"),aoife("span",{class:"name"},i[u+1].name)),aoife("div",{class:"arrow arrow-right"},aoife(Ne,null)))):aoife("div",{class:"aoife-markdown-page-btn double"},aoife("div",{class:"btn left",onclick:f},aoife("div",{class:"arrow arrow-left"},aoife(Ne,null)),aoife("div",{class:"title"},aoife("label",{class:"tip"},"Previous"),aoife("span",{class:"name"},i[u-1].name))),aoife("div",{class:"btn right",onclick:x},aoife("div",{class:"title"},aoife("label",{class:"tip"},"Next"),aoife("span",{class:"name"},i[u+1].name)),aoife("div",{class:"arrow arrow-right"},aoife(Ne,null))))};ge`
   .aoife-markdown-page-btn {
-    padding: 20px;
+    padding: 20px 5% 20px;
     broder: 1px solid rgba(0, 0, 0, 0.2);
   }
   .aoife-markdown-page-btn.double {
@@ -1327,6 +1327,9 @@ Please report this to https://github.com/markedjs/marked.`,s.silent)return"<p>An
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.03);
     border-radius: 4px;
     padding: 20px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 10px;
   }
   @media (min-width: 640px) {
     .aoife-markdown-page-btn > .btn:hover {
@@ -1339,10 +1342,6 @@ Please report this to https://github.com/markedjs/marked.`,s.silent)return"<p>An
     .aoife-markdown-page-btn > .btn:hover .arrow-right {
       transform: scaleX(-1) translate(-6px, 0px);
     }
-  }
-  .aoife-markdown-page-btn > .btn {
-    display: grid;
-    grid-auto-flow: column;
   }
   .aoife-markdown-page-btn > .btn.left {
     grid-template-columns: 1fr auto;
