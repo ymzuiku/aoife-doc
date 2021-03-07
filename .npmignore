@@ -5,3 +5,5 @@ index.html
 vite.config.ts
 dist
 build
+!/es/*
+!/lib/*
