@@ -29,6 +29,11 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.31.tgz#72286bd33d137aa0d152d47ec7c1762563d34055"
   integrity sha512-vFHy/ezP5qI0rFgJ7aQnjDXwAMrG0KqqIH7tQG5PPv3BWBayOPIQNBjVc/P6hhdZfMx51REc6tfDNXHUio893g==
 
+aoife-route@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/aoife-route/-/aoife-route-0.1.6.tgz#ab229965f74330b70853b70aef755aa85339b8e6"
+  integrity sha512-HaIIzGAKHxeb1fzcvQXg8fLzqx8Ujr8W+RzryZyGGPrd0r4MnnA2CkUvbeSbK5rLGfZRb+InaXHCllWUo7hVIg==
+
 aoife@^1.7.1:
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/aoife/-/aoife-1.7.2.tgz#362ceb02fc7656cd29221853679b15574c4fa312"

@@ -5,6 +5,7 @@ import { MarkdownMenu } from "./MarkdownMenu";
 import { MarkdownHeader } from "./MarkdownHeader";
 import { MarkdownFooter } from "./MarkdownFooter";
 import { getNum } from "./utils";
+import Route from "aoife-route";
 
 export interface MarkdownData {
   title: string;
@@ -20,6 +21,7 @@ export const MarkdownPage = ({ version, title, data }: MarkdownData) => {
     showMobileMenu: false,
     showPcMenu: true,
   };
+
   return (
     <div class="aoife-markdown-page">
       <MarkdownHeader
@@ -39,14 +41,24 @@ export const MarkdownPage = ({ version, title, data }: MarkdownData) => {
           />
         </div>
         <div class="aoife-markdown-page-md">
-          {() => (
-            <Markdown
-              footer={
-                <MarkdownFooter state={state} num={state.num} data={data} />
-              }
-              text={data[state.num] && data[state.num].text}
-            />
-          )}
+          {data.map((item, i) => {
+            return (
+              <Route
+                root={i === 0}
+                url={"/" + item.name}
+                render={() => {
+                  return (
+                    <Markdown
+                      footer={
+                        <MarkdownFooter state={state} num={i} data={data} />
+                      }
+                      text={data[i] && data[i].text}
+                    />
+                  );
+                }}
+              />
+            );
+          })}
         </div>
       </div>
     </div>
