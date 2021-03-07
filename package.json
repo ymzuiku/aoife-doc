@@ -1,10 +1,10 @@
 {
   "name": "aoife-doc",
-  "version": "1.2.2",
-  "main": "es/lib/index.js",
+  "version": "1.2.3",
+  "main": "es/index.js",
   "types": "lib/index.ts",
   "scripts": {
-    "es": "esbuild --define:process.env.NODE_ENV=\\\"production\\\" lib/index.ts --outdir=es --target=esnext --bundle --format=esm --jsx-factory=aoife --jsx-fragment=aoife.Frag --minify --splitting",
+    "es": "vite --config vite-lib.config.ts build",
     "dev": "vite",
     "build": "tsc && vite build"
   },
@@ -20,7 +20,7 @@
     "marked": "^2.0.1",
     "mermaid": "^8.9.1",
     "template-css": "^1.5.6",
-    "vite": "^2.0.0-beta.12"
+    "vite": "^2.0.5"
   },
   "bin": {
     "aoife-doc": "bin.js"
