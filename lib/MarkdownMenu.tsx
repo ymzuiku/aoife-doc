@@ -26,13 +26,7 @@ export const MarkdownMenu = ({
                 "menu-item",
               ]}
               onclick={() => {
-                actions.changeMobileMenuShow(state, false);
-                window.location.href = "/#/" + item.name;
-                setTimeout(() => {
-                  document.documentElement.scrollTo({ top: 0 });
-                  state.num = i;
-                  aoife.next(".menu-item, .aoife-markdown-page-md");
-                }, 50);
+                actions.changeUrl("/" + item.name, state, i);
               }}
             >
               {item.name}

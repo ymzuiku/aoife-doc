@@ -4,6 +4,7 @@ import { MarkdownList } from "./types";
 import { MarkdownMenu } from "./MarkdownMenu";
 import { MarkdownHeader } from "./MarkdownHeader";
 import { MarkdownFooter } from "./MarkdownFooter";
+import { getNum } from "./utils";
 
 export interface MarkdownData {
   title: string;
@@ -11,29 +12,6 @@ export interface MarkdownData {
   version: string;
   files: string[];
   data: MarkdownList[];
-}
-
-function getName() {
-  if (window.location.hash.length > 1) {
-    const url = window.location.hash.replace("#/", "");
-    return decodeURI(url);
-  }
-  const url = window.location.pathname.replace("/", "");
-  return decodeURI(url);
-}
-
-function getNum(data: any) {
-  const name = getName();
-  if (!name) {
-    return 0;
-  }
-  let out = 0;
-  data.forEach((item: any, i: number) => {
-    if (item.name === name) {
-      out = i;
-    }
-  });
-  return out;
 }
 
 export const MarkdownPage = ({ version, title, data }: MarkdownData) => {

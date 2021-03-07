@@ -1,4 +1,5 @@
 import css from "template-css";
+import { actions } from "./actions";
 
 const Arrow = () => {
   return (
@@ -36,10 +37,7 @@ export const MarkdownFooter = ({
   num: number;
 }) => {
   const changePage = (n: number) => {
-    document.documentElement.scrollTo({ top: 0 });
-    window.location.href = "#/" + data[n].name;
-    state.num = n;
-    aoife.next(".menu-item, .aoife-markdown-page-md");
+    actions.changeUrl("/" + data[n].name, state, n);
   };
   const previous = () => {
     if (!data[num - 1]) {
