@@ -15,18 +15,18 @@ export default defineConfig({
     outDir: "es",
     brotliSize: false,
     manifest: false,
-    rollupOptions: {
-      // make sure to externalize deps that shouldn't be bundled
-      // into your library
-      external: ["aoife"],
-      output: {
-        // Provide global variables to use in the UMD build
-        // for externalized deps
-        globals: {
-          aoife: "aoife",
-        },
-      },
-    },
+    // rollupOptions: {
+    //   // make sure to externalize deps that shouldn't be bundled
+    //   // into your library
+    //   external: ["aoife"],
+    //   output: {
+    //     // Provide global variables to use in the UMD build
+    //     // for externalized deps
+    //     globals: {
+    //       aoife: "aoife",
+    //     },
+    //   },
+    // },
   },
   optimizeDeps: {
     exclude: ["monaco-editor", "vscode"],
