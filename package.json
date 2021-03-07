@@ -1,7 +1,7 @@
 {
   "name": "aoife-doc",
-  "version": "1.2.4",
-  "main": "es/index.js",
+  "version": "1.2.5",
+  "main": "es/aoife-doc.es.js",
   "types": "lib/index.ts",
   "scripts": {
     "es": "vite --config vite-lib.config.ts build",
