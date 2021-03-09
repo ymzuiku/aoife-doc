@@ -36,6 +36,9 @@ export const MarkdownFooter = ({
   data: any;
   num: number;
 }) => {
+  if (!data || data.length < 2) {
+    return <div></div>;
+  }
   const changePage = (n: number) => {
     actions.changeUrl("/" + data[n].name, state, n);
   };
@@ -62,7 +65,7 @@ export const MarkdownFooter = ({
           </div>
           <div class="title">
             <label class="tip">Previous</label>
-            <span class="name">{data[num - 1].name}</span>
+            <span class="name">{data[num - 1] && data[num - 1].name}</span>
           </div>
         </div>
       </div>
