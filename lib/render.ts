@@ -97,7 +97,7 @@ function VanillaMarkdown(md: string, isGetMoc?: boolean) {
   const view = document.createElement("div") as MarkdownElement;
   view.className = "vmdb";
   view.style.overflowX = "hidden";
-  view.style.padding = "20px 5% 60px 5%";
+  view.style.padding = "5px 5% 60px 5%";
   view.innerHTML = marked(md, {
     renderer,
     xhtml: true,

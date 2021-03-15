@@ -83,7 +83,7 @@ export const Markdown = ({
                     item.selector
                   ) as HTMLElement;
                   if (e) {
-                    document.documentElement.scrollTo({
+                    window.scrollTo({
                       top: e.offsetTop - 20,
                       behavior: "smooth",
                     });
@@ -105,38 +105,41 @@ export const Markdown = ({
 css`
   .aoife-markdown {
     display: grid;
+    grid-template-areas: "moc" "content";
     position: relative;
-    grid-auto-flow: row;
     height: 100%;
     width: 100%;
     box-sizing: border-box;
   }
   .aoife-markdown-content {
     display: grid;
+    grid-area: content;
     padding-bottom: 60px;
     grid-auto-flow: row;
   }
   .aoife-markdown > .moc {
+    grid-area: moc;
     position: relative;
+    box-sizing: border-box;
     width: 100%;
     font-family: var(--vmdb-fm);
-    margin-bottom: 30px;
+    padding: 20px;
+    padding-bottom: 0px;
   }
 
   @media (min-width: 640px) {
     .aoife-markdown {
-      display: grid;
-      grid-template-columns: 1fr var(--vmdb-menu-width);
-      /* grid-auto-flow: column; */
+      grid-template-areas: "content moc";
     }
     .aoife-markdown > .moc {
       position: relative;
+      margin-bottom: 30px;
       font-family: var(--vmdb-fm);
     }
   }
 
   .aoife-markdown > .moc > .moc-real {
-    position: sticky;
+    position: static;
     top: 20px;
     padding-bottom: 20px;
     box-sizing: border-box;
@@ -151,6 +154,12 @@ css`
     font-size: 12px;
     word-break: break-all;
     border-left: 1px solid var(--vmdb-line);
+  }
+
+  @media (min-width: 640px) {
+    .aoife-markdown > .moc > .moc-real {
+      position: sticky;
+    }
   }
 
   .aoife-markdown .moc-real .moc-level-none {

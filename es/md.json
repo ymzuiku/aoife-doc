@@ -1,6 +1,12 @@
 {
-  "title": "Aoife-Doc",
-  "version": "1.0.0",
+  "title": "Aoife Doc Tools",
+  "version": "1.0.1",
   "path": "/md/",
-  "files": ["快速开始", "在 npm 中使用", "绘制图表", "资源及跳转"]
+  "files": [
+    "快速开始",
+    "在 npm 中使用",
+    "绘制图表",
+    "资源及跳转",
+    "用户体验及缓存"
+  ]
 }

@@ -6,6 +6,7 @@ export const actions = {
     aoife.next(".aoife-markdown-page .mobile-menu");
   },
   changeUrl: (url: string, state: any, num: number) => {
+    state.showMobileMenu = false;
     state.num = num;
     aoife.next("*");
     Route.push(url);

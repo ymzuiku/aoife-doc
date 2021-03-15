@@ -1,6 +1,6 @@
 {
   "name": "aoife-doc",
-  "version": "1.2.9",
+  "version": "1.2.10",
   "main": "es/aoife-doc.es.js",
   "types": "lib/index.ts",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "aoife": "^1.7.1",
-    "aoife-route": "^0.1.9",
+    "aoife-route": "^0.1.10",
     "marked": "^2.0.1",
     "mermaid": "^8.9.1",
     "template-css": "^1.5.6"

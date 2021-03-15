@@ -114,6 +114,7 @@ css`
   }
 
   .vmdb h1 {
+    font-size: 2em;
     margin: 0.67em 0;
   }
 
@@ -232,6 +233,36 @@ css`
     color: #000;
     margin-top: 0;
     margin-bottom: 0;
+  }
+
+  .vmdb h1 {
+    font-size: 32px;
+  }
+
+  .vmdb h1,
+  .vmdb h2 {
+    font-weight: 600;
+  }
+
+  .vmdb h2 {
+    font-size: 24px;
+  }
+
+  .vmdb h3 {
+    font-size: 20px;
+  }
+
+  .vmdb h3,
+  .vmdb h4 {
+    font-weight: 600;
+  }
+
+  .vmdb h4 {
+    font-size: 16px;
+  }
+
+  .vmdb h5 {
+    font-size: 14px;
   }
 
   .vmdb h5,
@@ -663,18 +694,6 @@ css`
 
   .vmdb blockquote > :last-child {
     margin-bottom: 0;
-  }
-
-  .vmdb h1,
-  .vmdb h2,
-  .vmdb h3,
-  .vmdb h4,
-  .vmdb h5,
-  .vmdb h6 {
-    margin-top: 24px;
-    margin-bottom: 16px;
-    font-weight: 600;
-    line-height: 1.25;
   }
 
   .vmdb pre {
