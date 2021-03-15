@@ -113,11 +113,6 @@ css`
     font-weight: bolder;
   }
 
-  .vmdb h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
-  }
-
   .vmdb img {
     border-style: none;
   }
@@ -218,12 +213,6 @@ css`
     box-shadow: inset 0 -1px 0 #d1d5da;
   }
 
-  .vmdb h1[data-moc-first] {
-    margin: 0 0 !important;
-    padding: 0.6em 0 !important;
-    border-top: none !important;
-  }
-
   .vmdb h1,
   .vmdb h2,
   .vmdb h3,
@@ -231,8 +220,9 @@ css`
   .vmdb h5,
   .vmdb h6 {
     color: #000;
-    margin-top: 0;
-    margin-bottom: 0;
+    /* margin-top: 0;
+    margin-bottom: 0; */
+    margin: 0.67em 0;
   }
 
   .vmdb h1 {
@@ -265,13 +255,13 @@ css`
     font-size: 14px;
   }
 
+  .vmdb h6 {
+    font-size: 12px;
+  }
+
   .vmdb h5,
   .vmdb h6 {
     font-weight: 600;
-  }
-
-  .vmdb h6 {
-    font-size: 12px;
   }
 
   .vmdb p {
@@ -698,44 +688,6 @@ css`
 
   .vmdb pre {
     margin: 1.8em 0px !important;
-  }
-
-  .vmdb h1 {
-    margin-top: 1.6em;
-    padding-top: 1.6em;
-    border-top: 1px solid var(--vmdb-line);
-    font-size: 2.7em;
-  }
-
-  .vmdb h2 {
-    margin-top: 1.6em;
-    margin-bottom: 1.6em;
-    font-size: 2em;
-  }
-
-  .vmdb h3 {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    font-size: 1.6em;
-  }
-
-  .vmdb h4 {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    font-size: 1.25em;
-  }
-
-  .vmdb h5 {
-    margin-top: 0.6em;
-    margin-bottom: 0.6em;
-    font-size: 0.875em;
-  }
-
-  .vmdb h6 {
-    margin-top: 0.6em;
-    margin-bottom: 0.6em;
-    font-size: 0.85em;
-    color: #6a737d;
   }
 
   .vmdb ol,
