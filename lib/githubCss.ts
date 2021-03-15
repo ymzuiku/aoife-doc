@@ -12,10 +12,10 @@ css`
   .vmdb pre {
     border-radius: var(--vmdb-radius) !important;
   }
-  .vmdb pre > code {
+  /* .vmdb pre > code {
     white-space: break-spaces !important;
     word-break: break-all !important;
-  }
+  } */
   .vmdb {
     -moz-user-select: auto !important;
     -webkit-user-select: auto !important;

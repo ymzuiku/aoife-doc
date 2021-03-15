@@ -30,6 +30,15 @@ export const MarkdownHeader = ({
           actions.changeMobileMenuShow(state, true);
         }}
       ></div>
+      <span
+        class="header-info"
+        onclick={() => {
+          window.scrollTo({ top: 0, behavior: "auto" });
+        }}
+      >
+        {() => state && data && data[state.num] && data[state.num].name}
+      </span>
+      <span />
       <label class="header-title">{title || "Aofie Document"}</label>
       <div class={() => ["mobile-menu", state.showMobileMenu && "mobile-show"]}>
         <div class="mobile-plan">
@@ -64,11 +73,17 @@ css`
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     transition: all 0.2s ease-out;
     display: grid;
-    grid-auto-flow: column;
+    grid-template-columns: auto auto 1fr auto;
     place-content: center start;
   }
   .aoife-markdown-page .header-title {
     font-size: 16px;
+    display: grid;
+    align-items: center;
+    margin-right: 20px;
+  }
+  .aoife-markdown-page .header-info {
+    font-size: 12px;
     display: grid;
     align-items: center;
   }

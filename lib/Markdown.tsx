@@ -85,7 +85,7 @@ export const Markdown = ({
                   if (e) {
                     window.scrollTo({
                       top: e.offsetTop - 20,
-                      behavior: "smooth",
+                      behavior: "auto",
                     });
                   }
                 }}
