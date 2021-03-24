@@ -1,5 +1,5 @@
 import css from "template-css";
-import { MarkdownPage, MarkdownData } from "./MarkdownPage";
+import { MarkdownPage } from "./MarkdownPage";
 
 export const MarkdownBook = ({ url }: { url: string }) => {
   fetch(url + "?t=" + Date.now())

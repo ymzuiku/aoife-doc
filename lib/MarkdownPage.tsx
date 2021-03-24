@@ -8,6 +8,7 @@ import { getNum } from "./utils";
 import Route from "aoife-route";
 
 export interface MarkdownData {
+  homepage?: string;
   title: string;
   path: string;
   version: string;
@@ -15,7 +16,12 @@ export interface MarkdownData {
   data: MarkdownList[];
 }
 
-export const MarkdownPage = ({ version, title, data }: MarkdownData) => {
+export const MarkdownPage = ({
+  version,
+  title,
+  data,
+  homepage,
+}: MarkdownData) => {
   const state = {
     num: getNum(data),
     showMobileMenu: false,
@@ -29,6 +35,7 @@ export const MarkdownPage = ({ version, title, data }: MarkdownData) => {
         data={data}
         title={title}
         state={state}
+        homepage={homepage}
         markdownState={markdownState}
       />
       <div class="content">
@@ -38,6 +45,7 @@ export const MarkdownPage = ({ version, title, data }: MarkdownData) => {
             title={title}
             state={state}
             data={data}
+            homepage={homepage}
           />
         </div>
         <div class="aoife-markdown-page-md">

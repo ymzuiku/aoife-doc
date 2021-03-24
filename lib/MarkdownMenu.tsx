@@ -7,15 +7,26 @@ export const MarkdownMenu = ({
   title,
   version,
   data,
+  homepage,
 }: {
   state: any;
   title: string;
   version: string;
+  homepage?: string;
   data: MarkdownList[];
 }) => {
   return (
     <div class="menu">
-      <div class="menu-title">{title || "Aofie Document"}</div>
+      <div
+        class={["menu-title", homepage && "menu-have-home-page"]}
+        onclick={() => {
+          if (homepage) {
+            window.open(homepage);
+          }
+        }}
+      >
+        {title || "Aofie Document"}
+      </div>
       {version && <div class="menu-version">{version}</div>}
       <div class="menu-items">
         {data.map((item, i) => {
@@ -54,6 +65,15 @@ css`
   }
   .aoife-markdown-page .menu-items {
     overflow: auto;
+  }
+  .aoife-markdown-page .menu-have-home-page {
+    color: hsl(210, 60%, 40%);
+    cursor: pointer;
+    border-radius: 10px;
+    margin-right: 6px;
+  }
+  .aoife-markdown-page .menu-have-home-page:hover {
+    background: hsla(210, 20%, 40%, 0.1);
   }
   .aoife-markdown-page .menu-title {
     font-size: 20px;

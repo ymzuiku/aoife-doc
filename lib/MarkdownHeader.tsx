@@ -9,11 +9,13 @@ export const MarkdownHeader = ({
   state,
   markdownState,
   data,
+  homepage,
 }: {
   title: string;
   version: string;
   state: any;
   markdownState: any;
+  homepage?: string;
   data: any;
 }) => {
   return (
@@ -39,7 +41,16 @@ export const MarkdownHeader = ({
         {() => state && data && data[state.num] && data[state.num].name}
       </span>
       <span />
-      <label class="header-title">{title || "Aofie Document"}</label>
+      <label
+        class={["header-title", homepage && "header-have-home-page"]}
+        onclick={() => {
+          if (homepage) {
+            window.open(homepage);
+          }
+        }}
+      >
+        {title || "Aofie Document"}
+      </label>
       <div class={() => ["mobile-menu", state.showMobileMenu && "mobile-show"]}>
         <div class="mobile-plan">
           <MarkdownMenu
@@ -79,13 +90,23 @@ css`
   .aoife-markdown-page .header-title {
     font-size: 16px;
     display: grid;
+    font-weight: bold;
     align-items: center;
-    margin-right: 20px;
+    margin-right: 10px;
   }
   .aoife-markdown-page .header-info {
     font-size: 12px;
     display: grid;
     align-items: center;
+  }
+  .aoife-markdown-page .header-have-home-page {
+    color: hsl(210, 60%, 40%);
+    padding: 2px 4px;
+    font-weight: bold;
+    border-radius: 10px;
+  }
+  .aoife-markdown-page .header-have-home-page:active {
+    background: hsla(210, 20%, 40%, 0.1);
   }
   .aoife-markdown-page .header-shadow {
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.04);
