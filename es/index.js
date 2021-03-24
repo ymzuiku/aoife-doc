@@ -1015,8 +1015,7 @@ var e=Object.defineProperty,t=Object.prototype.hasOwnProperty,n=Object.getOwnPro
     box-sizing: border-box;
     left: 0px;
     height: auto;
-    max-height: calc(100% - 40px);
-    overflow-y: auto;
+    max-height: calc(100% - 20px);
     padding-right: 20px;
     line-height: 1.5;
     font-weight: 500;
