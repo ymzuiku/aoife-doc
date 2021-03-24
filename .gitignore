@@ -2,6 +2,7 @@
 
 !/es/*
 !/lib/*
+local
 
 # dependencies
 node_modules

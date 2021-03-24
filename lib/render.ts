@@ -58,8 +58,6 @@ renderer.code = function (
   return out;
 };
 
-import("mermaid");
-
 function VanillaMarkdown(md: string, isGetMoc?: boolean) {
   const moc: MocOptions[] = [];
 
@@ -115,7 +113,8 @@ function VanillaMarkdown(md: string, isGetMoc?: boolean) {
   setTimeout(() => {
     try {
       const nodeList = view.querySelectorAll(".mermaid");
-      if (nodeList && nodeList.length) {
+
+      if (nodeList && nodeList.length > 0) {
         import("mermaid").then((e) => {
           e.default.init(nodeList);
           nodeList.forEach((v) => {
@@ -133,7 +132,7 @@ function VanillaMarkdown(md: string, isGetMoc?: boolean) {
       }
 
       const videoList = view.querySelectorAll(".md-video");
-      if (videoList && videoList.length) {
+      if (videoList && videoList.length > 0) {
         import("xgplayer").then((e) => {
           const Player = e.default;
 
