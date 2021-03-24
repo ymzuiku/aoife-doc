@@ -67,7 +67,7 @@ css`
     overflow: auto;
   }
   .aoife-markdown-page .menu-have-home-page {
-    color: hsl(210, 60%, 40%);
+    color: hsl(210, 60%, 50%);
     cursor: pointer;
     border-radius: 10px;
     margin-right: 6px;

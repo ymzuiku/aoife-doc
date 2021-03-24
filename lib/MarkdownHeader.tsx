@@ -58,6 +58,7 @@ export const MarkdownHeader = ({
             title={title}
             data={data}
             state={state}
+            homepage={homepage}
           />
         </div>
         <div
@@ -100,7 +101,7 @@ css`
     align-items: center;
   }
   .aoife-markdown-page .header-have-home-page {
-    color: hsl(210, 60%, 40%);
+    color: hsl(210, 60%, 50%);
     padding: 2px 4px;
     font-weight: bold;
     border-radius: 10px;
