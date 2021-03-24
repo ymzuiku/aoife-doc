@@ -27,14 +27,13 @@ function HTMLEncode(html: string) {
   return output;
 }
 
-let vid = 0;
-
 renderer.code = function (
   code: string,
   language: string | undefined,
   isEscaped: boolean
 ): string {
-  if (code) {
+  if (code && language) {
+    language = language.trim();
     if (language === "g" || language === "graph") {
       const lastHtml = mermaidCache[code];
       if (lastHtml) {
@@ -46,8 +45,12 @@ renderer.code = function (
       return `<div data-code="${code}" style="opacity: 0; text-align:center; transition: opacity 0.1s ease-out; min-height: 10px; padding:10px 0px; overflow:auto; margin:10px 0px;" class="mermaid">${code}</div>`;
     }
     if (language === "video") {
-      vid += 1;
-      return `<div id="vid-${vid}" class="md-video videoWrapper" data-url="${code.trim()}" ></div>`;
+      return `<div id="vid-${Math.random()
+        .toString()
+        .replace(
+          ".",
+          ""
+        )}" class="md-video videoWrapper" data-url="${code.trim()}" style="border-radius:var(--vmdb-radius); overflow:hidden" ></div>`;
     }
   }
 
@@ -144,10 +147,15 @@ function VanillaMarkdown(md: string, isGetMoc?: boolean) {
               list.forEach((item) => {
                 const [key, ...values] = item.split(":").map((v) => v.trim());
                 data[key] = values.join(":");
+                if (data[key] === "false") {
+                  data[key] = false;
+                } else if (data[key] === "true") {
+                  data[key] = true;
+                }
               });
-              let player = new Player({
+              new Player({
                 id: v.id,
-                autoplay: true,
+                autoplay: false,
                 volume: 1,
                 url: url,
                 playsinline: true,

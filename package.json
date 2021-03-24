@@ -1,10 +1,11 @@
 {
   "name": "aoife-doc",
-  "version": "1.4.3",
+  "version": "1.4.5",
   "main": "es/aoife-doc.es.js",
   "types": "lib/index.ts",
   "scripts": {
     "es": "vite --config vite-lib.config.ts build",
+    "local-es": "rm -rf local/es && yarn es && cp -rf es local/es",
     "dev": "vite"
   },
   "dependencies": {

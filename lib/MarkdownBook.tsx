@@ -21,6 +21,9 @@ export const MarkdownBook = ({ url }: { url: string }) => {
         });
         out.innerHTML = "";
         data.list = list;
+        if (data.title) {
+          document.title = data.title;
+        }
         (out as HTMLElement).replaceWith(
           <MarkdownPage data={list} {...data} />
         );
