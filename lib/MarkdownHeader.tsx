@@ -82,7 +82,7 @@ css`
     left: 0px;
     background: #fff;
     z-index: 1000;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0px solid rgba(0, 0, 0, 0);
     transition: all 0.2s ease-out;
     display: grid;
     grid-template-columns: auto auto 1fr auto;
