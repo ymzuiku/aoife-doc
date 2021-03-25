@@ -640,7 +640,7 @@ css`
   }
 
   .vmdb > :first-child {
-    margin-top: 0 !important;
+    margin-top: 20px !important;
   }
 
   .vmdb > :last-child {
