@@ -212,15 +212,17 @@ var e=Object.defineProperty,t=Object.prototype.hasOwnProperty,n=Object.getOwnPro
   }
 
   .vmdb h1,
-  .vmdb h2,
+  .vmdb h2 {
+    color: #000;
+    margin: 1.2em 0;
+  }
+
   .vmdb h3,
   .vmdb h4,
   .vmdb h5,
   .vmdb h6 {
     color: #000;
-    /* margin-top: 0;
-    margin-bottom: 0; */
-    margin: 0.67em 0;
+    margin: 0.8em 0;
   }
 
   .vmdb h1 {
@@ -637,13 +639,14 @@ var e=Object.defineProperty,t=Object.prototype.hasOwnProperty,n=Object.getOwnPro
     clear: both;
   }
 
-  .vmdb > :first-child {
+  /* .vmdb > :first-child {
     margin-top: 20px !important;
-  }
+  } */
 
+  /* 
   .vmdb > :last-child {
     margin-bottom: 0 !important;
-  }
+  } */
 
   .vmdb a:not([href]) {
     color: inherit;
