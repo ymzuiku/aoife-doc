@@ -32,15 +32,6 @@ export const MarkdownHeader = ({
           actions.changeMobileMenuShow(state, true);
         }}
       ></div>
-      <span
-        class="header-info"
-        onclick={() => {
-          window.scrollTo({ top: 0, behavior: "auto" });
-        }}
-      >
-        {() => state && data && data[state.num] && data[state.num].name}
-      </span>
-      <span />
       <label
         class={["header-title", homepage && "header-have-home-page"]}
         onclick={() => {
@@ -51,6 +42,15 @@ export const MarkdownHeader = ({
       >
         {title || "Aofie Document"}
       </label>
+      <span />
+      <span
+        class="header-info"
+        onclick={() => {
+          window.scrollTo({ top: 0, behavior: "auto" });
+        }}
+      >
+        {() => state && data && data[state.num] && data[state.num].name}
+      </span>
       <div class={() => ["mobile-menu", state.showMobileMenu && "mobile-show"]}>
         <div class="mobile-plan">
           <MarkdownMenu
