@@ -1,3 +1,4 @@
+import Route from "aoife-route";
 import css from "template-css";
 import { MarkdownPage } from "./MarkdownPage";
 
@@ -32,6 +33,9 @@ export const MarkdownBook = ({ url }: { url: string }) => {
         data.list = list;
         if (data.title) {
           document.title = data.title;
+        }
+        if (location.pathname === "/" && list[0]) {
+          Route.push(list[0].name);
         }
         (out as HTMLElement).replaceWith(
           <MarkdownPage data={list} {...data} />
