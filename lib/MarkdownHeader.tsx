@@ -51,6 +51,28 @@ export const MarkdownHeader = ({
       >
         {() => state && data && data[state.num] && data[state.num].name}
       </span>
+      <span
+        class="header-arrow"
+        onclick={() => {
+          window.scrollTo({ top: 0, behavior: "auto" });
+        }}
+      >
+        <svg
+          t="1617685881508"
+          class="icon"
+          viewBox="0 0 1024 1024"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          p-id="1921"
+          width="1em"
+          height="1em"
+        >
+          <path
+            d="M329.745 562.745c-12.497 12.497-12.497 32.758 0 45.255 12.372 12.372 32.354 12.496 44.878 0.371L375 608l126.059-126.059c6.248-6.248 16.379-6.248 22.627 0L649.746 608c12.371 12.372 32.353 12.496 44.877 0.371L695 608c12.372-12.372 12.496-32.354 0.371-44.878l-0.371-0.377-137.373-137.372c-24.743-24.744-64.707-24.991-89.755-0.743l-0.754 0.743-137.373 137.372z"
+            p-id="1922"
+          ></path>
+        </svg>
+      </span>
       <div class={() => ["mobile-menu", state.showMobileMenu && "mobile-show"]}>
         <div class="mobile-plan">
           <MarkdownMenu
@@ -84,7 +106,7 @@ css`
     z-index: 1000;
     border-bottom: 0px solid rgba(0, 0, 0, 0);
     display: grid;
-    grid-template-columns: auto auto 1fr auto;
+    grid-template-columns: auto auto 1fr auto auto;
     place-content: center start;
   }
   .aoife-markdown-page .header-title {
@@ -92,12 +114,17 @@ css`
     display: grid;
     font-weight: bold;
     align-items: center;
-    margin-right: 10px;
   }
   .aoife-markdown-page .header-info {
     font-size: 12px;
     display: grid;
     align-items: center;
+    margin-right: 4px;
+  }
+  .aoife-markdown-page .header-arrow {
+    display: grid;
+    align-items: center;
+    margin-right: 10px;
   }
   .aoife-markdown-page .header-have-home-page {
     color: hsl(210, 60%, 50%);
