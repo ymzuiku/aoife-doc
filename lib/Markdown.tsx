@@ -90,7 +90,7 @@ export const Markdown = ({
                   }
                 }}
               >
-                {item.text}
+                {item.raw}
               </div>
             );
           })}

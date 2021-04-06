@@ -6,6 +6,9 @@ export const MarkdownBook = ({ url }: { url: string }) => {
     .then((v) => v.json())
     .then((data) => {
       const promiseList = data.files.map((file: string) => {
+        if (typeof file === "object") {
+          return fetch((file as any).url).then((v) => v.text());
+        }
         if (!/\.md$/.test(file)) {
           file += ".md";
         }
@@ -17,9 +20,15 @@ export const MarkdownBook = ({ url }: { url: string }) => {
       Promise.all(promiseList).then((texts) => {
         const list = [] as any;
         texts.forEach((text, i) => {
-          list.push({ name: data.files[i], text: text as string });
+          const val = data.files[i];
+          if (typeof val === "object") {
+            list.push({ name: val.name, text: text as string });
+          } else {
+            list.push({ name: data.files[i], text: text as string });
+          }
         });
         out.innerHTML = "";
+
         data.list = list;
         if (data.title) {
           document.title = data.title;

@@ -120,16 +120,19 @@ css`
       left: 0px;
     }
   }
+
   .aoife-markdown-page .menu-footer {
     cursor: pointer;
     font-size: 12px;
     opacity: 0.5;
     padding-top: 16px;
     padding-left: 16px;
-    /* display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 10px;
-    place-items: center; */
+    zoom: 0.8;
+  }
+  @media (min-width: 1200px) {
+    .aoife-markdown-page .menu-footer {
+      zoom: 1;
+    }
   }
   .by-aoife-doc {
     font-size: 14px;
