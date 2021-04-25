@@ -3,7 +3,7 @@ import render from "./render";
 import { MarkdownBook } from "./MarkdownBook";
 import { MarkdownPage } from "./MarkdownPage";
 import { Markdown } from "./Markdown";
-import { usePrismTheme } from "./render/prism";
+import { usePrismTheme } from "./render/extends/prism";
 
 usePrismTheme((window as any).aoifeMarkdownTheme || "gitbook");
 

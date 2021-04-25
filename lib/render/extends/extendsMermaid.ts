@@ -12,6 +12,7 @@ export const htmlMermaid = (code: string) => {
 };
 
 export const renderMermaid = async (view: HTMLElement) => {
+  await aoife.waitAppend(view);
   try {
     const nodeList = view.querySelectorAll(".mermaid");
 

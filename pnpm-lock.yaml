@@ -5,6 +5,7 @@ dependencies:
   fs-extra: 9.1.0
   marked: 2.0.1
   mermaid: 8.9.2
+  querystring-number: 1.0.8
   template-css: 1.5.6
   xgplayer: 2.18.4
 devDependencies:
@@ -870,6 +871,7 @@ specifiers:
   fs-extra: ^9.1.0
   marked: ^2.0.1
   mermaid: ^8.9.1
+  querystring-number: ^1.0.8
   template-css: ^1.5.6
   vite: ^2.0.5
   xgplayer: ^2.18.4
