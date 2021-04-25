@@ -1,13 +1,87 @@
 import css from "template-css";
 
+let alphas = "";
+
+[
+  ["white", "255,255,255"],
+  ["black", "0,0,0"],
+].forEach(function (item) {
+  const [k, v] = item;
+  alphas += `--${k}-0:rgba(${v},0); --${k}-5:rgba(${v},0.05);`;
+  for (var a = 0; a <= 99; a += 5) {
+    if (a > 5) {
+      alphas += `--${k}-${a}:rgba(${v},0.${a}); `;
+    }
+  }
+  alphas += `--${k}:rgba(${v},1); `;
+});
+
 css`
   :root {
+    ${alphas};
+    --bg-weak: #fafbfd;
+    --bg: #fff;
+    --bg-deep: #dbdbdc;
+
+    --light-weak: #fafbfd;
+    --light: #fff;
+    --light-deep: #dbdbdc;
+
+    --dark-weak: #5b6169;
+    --dark: #333a44;
+    --dark-deep: #000;
+
+    --gray-weak: #f8fafc;
+    --gray: #eff2f6;
+    --gray-deep: #e7ebf1;
+
+    --title-weak: #7f848a;
+    --title: #6f757d;
+    --title-deep: #3c4246;
+
+    --text-weak: #82878e;
+    --text: #6f757d;
+    --text-deep: #595f63;
+
+    --label-weak: #b9bec1;
+    --label: #9ea8ae;
+    --label-deep: #8c969c;
+
+    --primary-weak: #d9dbfd;
+    --primary: #747cec;
+    --primary-deep: #6269c9;
+
+    --secondary-weak: #cbf3e0;
+    --secondary: #5fcc9b;
+    --secondary-deep: #50ac83;
+
+    --active-weak: rgba(196, 206, 236, 0.1);
+    --active: rgba(196, 206, 236, 0.3);
+    --active-deep: rgba(196, 206, 236, 0.5);
+
+    --warn-weak: #fdf1d0;
+    --warn: #d4c396;
+    --warn-deep: #937224;
+
+    --error-weak: #ffcfcf;
+    --error: #ffaeae;
+    --error-deep: #cc3f3f;
+
+    --info-weak: #f1f3f9;
+    --info: #c0c6d8;
+    --info-deep: #6e757c;
+
+    --disable-weak: #dfe1e5;
+    --disable: #afb1b5;
+    --disable-deep: #677388;
+
     --vmdb-header: 50px;
     --vmdb-radius: 6px;
     --vmdb-line: #ddeeee;
     --vmdb-menu-width: 240px;
-    --vmdb-fm: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
-      sans-serif, Apple Color Emoji, Segoe UI Emoji;
+    --vmdb-fm: system-ui, -apple-system, "SF Pro SC", "PingFang SC", "Segoe UI",
+      Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI", Roboto, "Noto Sans";
   }
   .vmdb pre {
     border-radius: var(--vmdb-radius) !important;

@@ -1,0 +1,12 @@
+.md-chart {
+  border-radius: var(--vmdb-radius);
+  overflow: hidden;
+  width: calc(100% - 60px);
+  width: 800px;
+  padding: 20px 10px;
+  margin: 30px auto;
+  background: var(--bg);
+  box-shadow: 0 4px 10px var(--black-5);
+  border-radius: 6px;
+  border: 1px solid var(--black-10);
+}

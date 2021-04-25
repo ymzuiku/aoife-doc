@@ -1,13 +1,11 @@
 import { encode, decode } from "querystring-number";
+import "./extendsCharts.css";
 
 export const htmlCharts = (code: string) => {
   let _code = encode(code);
   return `<div id="vid-${Math.random()
     .toString()
-    .replace(
-      ".",
-      ""
-    )}" class="md-chart videoWrapper" data-code="${_code}" style="border-radius:var(--vmdb-radius); overflow:hidden" ></div>`;
+    .replace(".", "")}" class="md-chart" data-code="${_code}" ></div> `;
 };
 
 export const renderCharts = async (view: HTMLElement) => {
@@ -24,7 +22,6 @@ export const renderCharts = async (view: HTMLElement) => {
           const data = JSON.parse(decode(code)!);
           const chart = new apexcharts(node, data);
           chart.render();
-          console.log(node);
         } catch (err) {
           console.error(err);
         }
