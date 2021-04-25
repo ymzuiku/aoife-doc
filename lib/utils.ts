@@ -20,3 +20,27 @@ export function getNum(data: any) {
   });
   return out;
 }
+
+/*
+dog: 20
+fish: hello
+转化为：
+{
+  "dog":20,
+  "fish":"hello"
+}
+*/
+export function stringToObj(code: string) {
+  const list = code.split("\n");
+  const data = {} as any;
+  list.forEach((item) => {
+    const [key, ...values] = item.split(":").map((v) => v.trim());
+    data[key] = values.join(":");
+    if (data[key] === "false") {
+      data[key] = false;
+    } else if (data[key] === "true") {
+      data[key] = true;
+    }
+  });
+  return data;
+}

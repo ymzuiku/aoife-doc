@@ -52,7 +52,7 @@ export const MarkdownPage = ({
           {data.map((item, i) => {
             return (
               <Route
-                root={i === 0}
+                keep
                 url={"/" + item.name}
                 render={() => {
                   return (

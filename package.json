@@ -9,8 +9,9 @@
     "dev": "vite"
   },
   "dependencies": {
-    "aoife": "^1.7.1",
-    "aoife-route": "^0.1.10",
+    "aoife": "^1.7.8",
+    "aoife-route": "^0.2.8",
+    "apexcharts": "^3.26.1",
     "fs-extra": "^9.1.0",
     "marked": "^2.0.1",
     "mermaid": "^8.9.1",
