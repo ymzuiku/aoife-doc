@@ -18,7 +18,7 @@ export interface MarkdownElement extends HTMLDivElement {
 }
 
 interface ExtendsItem {
-  checker?: string;
+  language?: string;
   htmlCreator?: (code: string) => string;
   render: (view: HTMLElement) => Promise<any>;
 }
@@ -39,13 +39,14 @@ export const renderCore = (items: ExtendsItem[]) => {
   ): string {
     if (code && language) {
       language = language.trim();
-      items.forEach((item) => {
-        if (item.checker && item.htmlCreator) {
-          if (new RegExp(item.checker).test(language)) {
+      for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+        if (item.language && item.htmlCreator) {
+          if (new RegExp(item.language).test(language!)) {
             return item.htmlCreator(code);
           }
         }
-      });
+      }
     }
 
     let out = `<pre><code class="line-numbers highlight language-${language}">${HTMLEncode(

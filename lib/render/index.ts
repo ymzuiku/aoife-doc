@@ -7,9 +7,21 @@ import { htmlCharts, renderCharts } from "./extends/extendsCharts";
 
 const VanillaMarkdown = renderCore([
   { render: renderPrism },
-  { checker: "graph", htmlCreator: htmlMermaid, render: renderMermaid },
-  { checker: "video", htmlCreator: htmlVideo, render: renderVideo },
-  { checker: "chart", htmlCreator: htmlCharts, render: renderCharts },
+  {
+    language: "graph",
+    htmlCreator: htmlMermaid,
+    render: renderMermaid,
+  },
+  {
+    language: "video",
+    htmlCreator: htmlVideo,
+    render: renderVideo,
+  },
+  {
+    language: "chart",
+    htmlCreator: htmlCharts,
+    render: renderCharts,
+  },
 ]);
 
 export default VanillaMarkdown;

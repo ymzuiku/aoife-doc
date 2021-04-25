@@ -1,7 +1,5 @@
 import { encode, decode } from "querystring-number";
 
-export const checkCharts = (v: string) => /chart/.test(v);
-
 export const htmlCharts = (code: string) => {
   let _code = encode(code);
   return `<div id="vid-${Math.random()
