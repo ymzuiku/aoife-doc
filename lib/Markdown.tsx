@@ -1,5 +1,5 @@
-import markdown from "./render";
 import css from "template-css";
+import markdown from "./render";
 
 export const markdownState = {
   viewIndex: 0,
@@ -122,6 +122,7 @@ css`
     position: relative;
     box-sizing: border-box;
     width: 100%;
+    max-width: 320px;
     font-family: var(--vmdb-fm);
     padding: 20px;
     padding-bottom: 0px;
